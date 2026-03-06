@@ -34,6 +34,13 @@ def main():
                     print(f"{task} Completed")
                 else:
                     print(f"{task} Not completed")
+        elif user_input == "done":
+            task_name = input("Enter task name: ") # Ask for user task and store in var
+            if task_name in tasks:    
+                tasks[task_name] = True # Add that task to the tasks dict as the key
+                print(f"the task {task_name} as been completed")
+            else:
+                print(f"the {task_name} is not in your Todo list!")
 
 if __name__ == "__main__":
     main()
