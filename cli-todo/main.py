@@ -26,6 +26,7 @@ def main():
             task_name = input("Enter task name: ") # Ask for user task and store in var
             tasks[task_name] = False # Add that task to the tasks dict as the key
             print(f"the task {task_name} as been added to your Todo list")
+        # if the command is 'list'    
         elif user_input == "list":
             if not tasks:
                 print("Your Todo list is empty, nothing to display")
@@ -34,6 +35,7 @@ def main():
                     print(f"{task} Completed")
                 else:
                     print(f"{task} Not completed")
+        # if the command is 'done'
         elif user_input == "done":
             task_name = input("Enter task name: ") # Ask for user task and store in var
             if task_name in tasks:    
@@ -41,6 +43,15 @@ def main():
                 print(f"the task {task_name} as been completed")
             else:
                 print(f"the {task_name} is not in your Todo list!")
+        # if the command is 'remove'
+        elif user_input == "remove":
+            task_name = input("Enter task name: ") # Ask for user task and store in var
+            if task_name in tasks:    
+                tasks.pop(task_name)
+                print(f"the task {task_name} as been removed")
+            else:
+                print(f"the {task_name} is not in your Todo list!")
+
 
 if __name__ == "__main__":
     main()
